@@ -18,9 +18,9 @@ db.sequelize.sync();
 
 //require routes
 const usersRouter = require('./routes/user.route');
-const mobileRouter = require('./routes/mobile.route');
-const adminRouter = require('./routes/admin.route');
-const home = require('./routes/home.route');
+// const mobileRouter = require('./routes/mobile.route');
+// const adminRouter = require('./routes/admin.route');
+// const home = require('./routes/home.route');
 
 app.use(function(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin', '*');
@@ -40,14 +40,14 @@ app.use(function(req, res, next) {
   });
  
 app.use('/user', usersRouter);
-app.use('/mobile', mobileRouter);
-app.use('/admin', adminRouter);
-app.use('/home', home);
-require('./utils/cronJobs');
+// app.use('/mobile', mobileRouter);
+// app.use('/admin', adminRouter);
+// app.use('/home', home);
+// require('./utils/cronJobs');
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json('welcome to yudget');
+    res.json('welcome to the world');
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
